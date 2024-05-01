@@ -32,4 +32,17 @@ public class PacienteService {
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
+	
+	public Paciente update (Long id, Paciente paciente) {
+		Paciente pac = repository.getReferenceById(id);
+		updateData(pac, paciente);
+		return repository.save(pac);
+		
+	}
+
+	private void updateData(Paciente pac, Paciente paciente) {
+		pac.setMatricula(paciente.getMatricula());
+		pac.setName(paciente.getName());
+		
+	}
 }
