@@ -13,19 +13,23 @@ import com.estudosjava.atendimentomedico.repositories.PacienteRepository;
 public class PacienteService {
 
 	@Autowired
-	private PacienteRepository respository;
+	private PacienteRepository repository;
 	
 	public List<Paciente> findAll() {
-		return respository.findAll();
+		return repository.findAll();
 	}
 	
 	public Paciente findById(Long id) {
-		Optional<Paciente> paciente = respository.findById(id);
+		Optional<Paciente> paciente = repository.findById(id);
 		return paciente.get();
 	}
 	
 	public Paciente insert (Paciente paciente) {
-		return respository.save(paciente);
+		return repository.save(paciente);
 		
+	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
 	}
 }
