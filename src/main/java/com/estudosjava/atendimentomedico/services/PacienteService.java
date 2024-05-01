@@ -24,4 +24,8 @@ public class PacienteService {
 		return paciente.get();
 	}
 	
+	public Paciente insert (Paciente paciente) {
+		return respository.save(paciente);
+		
+	}
 }
