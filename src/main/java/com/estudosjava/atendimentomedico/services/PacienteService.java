@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.estudosjava.atendimentomedico.entities.Paciente;
 import com.estudosjava.atendimentomedico.repositories.PacienteRepository;
+import com.estudosjava.atendimentomedico.services.exceptions.PacienteNotFoundException;
 
 @Service
 public class PacienteService {
@@ -21,7 +22,8 @@ public class PacienteService {
 	
 	public Paciente findById(Long id) {
 		Optional<Paciente> paciente = repository.findById(id);
-		return paciente.get();
+		return paciente.orElseThrow(()-> 
+		new PacienteNotFoundException("Paciente não encontrado para o id informado."));
 	}
 	
 	public Paciente insert (Paciente paciente) {
