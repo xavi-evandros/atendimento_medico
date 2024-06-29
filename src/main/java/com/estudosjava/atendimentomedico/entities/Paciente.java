@@ -20,17 +20,21 @@ public class Paciente implements Serializable{
 	private Long id;
 	private String matricula;
 	private String name;
+	private String cpf;
+	private String filiacao;
 	
 	
 	public Paciente( ) {
 		
 	}
 	
-	public Paciente(Long id, String matricula, String name) {
+	public Paciente(Long id, String matricula, String name, String cpf, String filiacao) {
 		super();
 		this.id = id;
 		this.matricula = matricula;
 		this.name = name;
+		this.cpf= cpf;
+		this.filiacao=filiacao;
 	}
 
 	public Long getId() {
@@ -55,6 +59,23 @@ public class Paciente implements Serializable{
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getFiliacao() {
+		return filiacao;
+	}
+
+	public void setFiliacao(String filiacao) {
+		this.filiacao = filiacao;
 	}
 
 	@Override

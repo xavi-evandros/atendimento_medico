@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public class ResourceExceptionHandler {
 
 	@ExceptionHandler(PacienteNotFoundException.class)
-	public ResponseEntity<StandardError> pacienteNotFound (PacienteNotFoundException e, HttpServletRequest request) {
+	public ResponseEntity<StandardError> pacienteNotFound(PacienteNotFoundException e, HttpServletRequest request) {
 		StandardError standError = new StandardError();
 		standError.setTimestamp(Instant.now());
 		standError.setStatus(HttpStatus.NOT_FOUND.value());
@@ -23,7 +23,6 @@ public class ResourceExceptionHandler {
 		standError.setMessage(e.getMessage());
 		standError.setPath(request.getRequestURI());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(standError);
-		
+
 	}
-	
 }

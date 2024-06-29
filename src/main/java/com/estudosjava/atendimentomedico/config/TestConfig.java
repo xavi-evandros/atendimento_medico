@@ -19,8 +19,8 @@ public class TestConfig implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Paciente p = new Paciente(1L, "00379000125680017", "Evandro Xavier");
-		Paciente p2 = new Paciente(2L, "00379000125680104", "Rafael Xavier");
+		Paciente p = new Paciente(1L, "00379000125680017", "Evandro Xavier", "20590522892", "Zélia Maria Xavier");
+		Paciente p2 = new Paciente(2L, "00379000125680104", "Rafael Xavier", "30590522872", "Zélia Xavier");
 		userRepository.saveAll(Arrays.asList(p,p2));
 		
 	}
